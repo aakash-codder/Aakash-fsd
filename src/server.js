@@ -4,6 +4,7 @@ const app = express();
 
 app.use(express.json());
 
+const { students, getNextId } = require('../data/students');
 
 const studentsRouter = require('./src/routes/students'); // or './routes/students'
 app.use('/students', studentsRouter);
