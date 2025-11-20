@@ -1,6 +1,14 @@
 const express = require("express");
 const app = express();
+
+
 app.use(express.json());
+
+
+const studentsRouter = require('./src/routes/students'); // or './routes/students'
+app.use('/students', studentsRouter);
+
+app.listen(3000, () => console.log('Server on port 3000'));
 
 // In-memory array
 let students = [
